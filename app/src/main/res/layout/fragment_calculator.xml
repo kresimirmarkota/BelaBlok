@@ -16,20 +16,20 @@
         <TextView
             android:id="@+id/ourScoreHeader"
             style="@style/scoreHeader"
-            android:text="MI"
+            android:text="@string/usText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/yourScoreHeader"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/yourScoreHeader"
             style="@style/scoreHeader"
-            android:text="VI"
+            android:text="@string/youText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ourScoreHeader"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -49,7 +49,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/yourScore"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/yourScore"
@@ -58,7 +58,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ourScore"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -66,13 +66,13 @@
         android:id="@+id/options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textOff="BODOVI"
-        android:textOn="ZVANJA"
-        android:textSize="40sp"
+        android:textOff="@string/scoresToggleOption"
+        android:textOn="@string/callsToggleOption"
+        android:textSize="@dimen/calculatorToggleTextSize"
         app:layout_constraintBottom_toTopOf="@id/buttonWrapper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/score"></ToggleButton>
+        app:layout_constraintTop_toBottomOf="@id/score"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -87,7 +87,7 @@
         <Button
             android:id="@+id/buttonSeven"
             style="@style/buttonNumber"
-            android:text="7"
+            android:text="@string/numberSeven"
             app:layout_constraintBottom_toTopOf="@+id/buttonFour"
             app:layout_constraintEnd_toStartOf="@+id/buttonEight"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +96,7 @@
         <Button
             android:id="@+id/buttonEight"
             style="@style/buttonNumber"
-            android:text="8"
+            android:text="@string/numberEight"
             app:layout_constraintBottom_toTopOf="@+id/buttonFive"
             app:layout_constraintEnd_toStartOf="@+id/buttonNine"
             app:layout_constraintStart_toEndOf="@+id/buttonSeven"
@@ -105,7 +105,7 @@
         <Button
             android:id="@+id/buttonNine"
             style="@style/buttonNumber"
-            android:text="9"
+            android:text="@string/numberNine"
             app:layout_constraintBottom_toTopOf="@+id/buttonSix"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonEight"
@@ -115,7 +115,7 @@
         <Button
             android:id="@+id/buttonFour"
             style="@style/buttonNumber"
-            android:text="4"
+            android:text="@string/numberFour"
             app:layout_constraintBottom_toTopOf="@+id/buttonOne"
             app:layout_constraintEnd_toStartOf="@+id/buttonFive"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +124,7 @@
         <Button
             android:id="@+id/buttonFive"
             style="@style/buttonNumber"
-            android:text="5"
+            android:text="@string/numberFive"
             app:layout_constraintBottom_toTopOf="@+id/buttonTwo"
             app:layout_constraintEnd_toStartOf="@+id/buttonSix"
             app:layout_constraintStart_toEndOf="@+id/buttonFour"
@@ -133,7 +133,7 @@
         <Button
             android:id="@+id/buttonSix"
             style="@style/buttonNumber"
-            android:text="6"
+            android:text="@string/numberSix"
             app:layout_constraintBottom_toTopOf="@+id/buttonThree"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonFive"
@@ -143,7 +143,7 @@
         <Button
             android:id="@+id/buttonOne"
             style="@style/buttonNumber"
-            android:text="1"
+            android:text="@string/numberOne"
             app:layout_constraintBottom_toTopOf="@+id/buttonReset"
             app:layout_constraintEnd_toStartOf="@+id/buttonTwo"
             app:layout_constraintStart_toStartOf="parent"
@@ -152,7 +152,7 @@
         <Button
             android:id="@+id/buttonTwo"
             style="@style/buttonNumber"
-            android:text="2"
+            android:text="@string/numberTwo"
             app:layout_constraintBottom_toTopOf="@+id/buttonZero"
             app:layout_constraintEnd_toStartOf="@+id/buttonThree"
             app:layout_constraintStart_toEndOf="@+id/buttonOne"
@@ -161,7 +161,7 @@
         <Button
             android:id="@+id/buttonThree"
             style="@style/buttonNumber"
-            android:text="3"
+            android:text="@string/numberThree"
             app:layout_constraintBottom_toTopOf="@+id/buttonBackspace"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonTwo"
@@ -171,7 +171,7 @@
         <Button
             android:id="@+id/buttonReset"
             style="@style/buttonNumber"
-            android:text="RESET"
+            android:text="@string/reset"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/buttonZero"
             app:layout_constraintStart_toStartOf="parent"
@@ -180,7 +180,7 @@
         <Button
             android:id="@+id/buttonZero"
             style="@style/buttonNumber"
-            android:text="0"
+            android:text="@string/numberZero"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/buttonBackspace"
             app:layout_constraintStart_toEndOf="@+id/buttonReset"
@@ -189,7 +189,7 @@
         <Button
             android:id="@+id/buttonBackspace"
             style="@style/buttonNumber"
-            android:text="<"
+            android:text="@string/backspace"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonZero"
@@ -208,21 +208,21 @@
         <Button
             android:id="@+id/back"
             style="@style/buttonNavigation"
-            android:text="NATRAG"
+            android:text="@string/back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/confirm"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></Button>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <Button
             android:id="@+id/confirm"
             style="@style/buttonNavigation"
-            android:text="POTVRDI"
+            android:text="@string/confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="2"
             app:layout_constraintStart_toEndOf="@id/back"
-            app:layout_constraintTop_toTopOf="parent"></Button>
+            app:layout_constraintTop_toTopOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
