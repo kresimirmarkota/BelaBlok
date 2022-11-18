@@ -10,9 +10,7 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<Button>(R.id.button1).setOnClickListener {
-            view.findViewById<Button>(R.id.button2).text = "Click"
-        }
     }
+
+
 }
