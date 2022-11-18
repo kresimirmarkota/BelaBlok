@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <dimen name="scoreDimen">24sp</dimen>
     <dimen name="marginEndScore">10dp</dimen>
     <dimen name="verticalLine">32sp</dimen>
     <dimen name="numberOgGameSize">20sp</dimen>
     <dimen name="youUsTextSize">36sp</dimen>
+    <dimen name="calculatorToggleTextSize">40sp</dimen>
+    <dimen name="numberButtonTextSize">25sp</dimen>
 </resources>

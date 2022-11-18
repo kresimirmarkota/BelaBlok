@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="rowContainer">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="buttonNumber">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textSize">@dimen/numberButtonTextSize</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:onClick">numberAction</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+        <item name="layout_constraintVertical_weight">1</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="scoreHeader">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/calculatorToggleTextSize</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="buttonNavigation">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+</resources>
