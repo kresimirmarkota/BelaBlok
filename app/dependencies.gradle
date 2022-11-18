@@ -1,0 +1,28 @@
+ext {
+    //Version
+
+    jetpackVersion = '1.9.0'
+    materialVersion = '1.7.0'
+    constraintLayoutVersion = '2.1.4'
+    fragmentVersion = '1.5.4'
+    espressoVersion = '3.5.0'
+    junitVersion = '4.13.2'
+    junitTestVersion = '1.1.4'
+
+    //Support Libraries dependencies
+
+    jetPackDependencies = [jetpackCore: "androidx.core:core-ktx:${jetpackVersion}",]
+
+    materialDependencies = [material: "com.google.android.material:material:${materialVersion}"]
+
+    layoutDependencies = [constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"]
+
+    fragmentDependencies = [fragment: "androidx.fragment:fragment-ktx:${fragmentVersion}"]
+
+    espressoDependencies = [espresso: "androidx.test.espresso:espresso-core:${espressoVersion}"]
+
+    testJunitDependencies = [junit: "junit:junit:${junitVersion}"]
+
+    androidTestJunitDependencies = [androidJunit: "androidx.test.ext:junit:${junitTestVersion}"]
+
+}
