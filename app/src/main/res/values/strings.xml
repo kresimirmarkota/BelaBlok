@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Bela Blok</string>
+    <string name="noScoreText">---</string>
+    <string name="calls">Zvanja :</string>
+    <string name="score">Bodovi :</string>
+    <string name="verticalLineBetweenScores">|</string>
+    <string name="numberOfGame">br. igre</string>
+    <string name="usText">MI</string>
+    <string name="youText">VI</string>
+    <string name="newGame">Nova igra</string>
+    <string name="newEntry">Novi unos</string>
+
 </resources>
