@@ -39,6 +39,6 @@ class MiViScoreAdapter : RecyclerView.Adapter<MiViScoreAdapter.MiViScoreViewHold
     }
 
     override fun getItemCount(): Int {
-        return 1
+        return 8
     }
 }
