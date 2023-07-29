@@ -2,6 +2,8 @@
 <resources>
     <dimen name="scoreDimen">24sp</dimen>
     <dimen name="marginEndScore">10dp</dimen>
+    <dimen name="paddingEndScore">30dp</dimen>
+    <dimen name="paddingBottomMiddleLine">5dp</dimen>
     <dimen name="verticalLine">32sp</dimen>
     <dimen name="numberOgGameSize">20sp</dimen>
     <dimen name="youUsTextSize">36sp</dimen>

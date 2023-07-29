@@ -2,34 +2,53 @@ package com.example.belablok.fragments
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
+import android.widget.EditText
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.belablok.MainActivity
+import com.example.belablok.GameScoreViewModel
 import com.example.belablok.OnBtnClickListener
+import com.example.belablok.Scores
 import com.example.belablok.adapters.MiViScoreAdapter
-import com.example.belablok.R
 import com.example.belablok.databinding.FragmentGameScoreBinding
 
 class GameScoreFragment : Fragment() {
-    lateinit var binding: FragmentGameScoreBinding
-    lateinit var calculatorFragmentTransaction: OnBtnClickListener
+
+    private lateinit var binding: FragmentGameScoreBinding
+    private lateinit var calculatorFragmentTransaction: OnBtnClickListener
+    private val gameScoreViewModel: GameScoreViewModel by activityViewModels()
+    var totalMiScore: Int = 0
+    var totalViScore: Int = 0
+    var totalMiCall: Int = 0
+    var totalViCall: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val scoreObserver = Observer<Scores> { score: Scores ->
+            var totalMeScoreTemp: Int = 0
+            totalMeScoreTemp + score.miScore.toInt();
+            //Log.d("ovo",totalMeScoreTemp.toString())
+        }
+
+        gameScoreViewModel.miViScoresList.observe(this, scoreObserver)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+
         binding = FragmentGameScoreBinding.inflate(layoutInflater)
-        val view = binding.root
-        return view
+        return binding.root
+
     }
 
     override fun onAttach(context: Context) {
@@ -44,13 +63,12 @@ class GameScoreFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.gameScoresRV.layoutManager = LinearLayoutManager(context)
-        val rvAdapter = MiViScoreAdapter()
-        binding.gameScoresRV.adapter = rvAdapter
 
+        val rvAdapter = MiViScoreAdapter()
+        rvAdapter.updateScoreList(gameScoreViewModel.getPopulatedMiViScoreList())
+        binding.gameScoresRV.adapter = rvAdapter
         binding.newEntryButton.setOnClickListener {
             calculatorFragmentTransaction.onNewEntryBtnClick()
         }
-
     }
-
 }

@@ -1,29 +1,26 @@
 <resources>
     <string name="app_name">Bela Blok</string>
     <string name="noScoreText">---</string>
+    <string name="hintTextMiScore">unesite bodove za mi :</string>
+    <string name="hintTextViScore">unesite bodove za vi :</string>
+    <string name="hintTextViCall">unesite zvanja za vi :</string>
+    <string name="hintTextMiCall">unesite zvanja za mi :</string>
     <string name="calls">Zvanja :</string>
     <string name="score">Bodovi :</string>
     <string name="verticalLineBetweenScores">|</string>
-    <string name="numberOfGame">br. igre</string>
+    <string name="numberOfGame">br.igre</string>
     <string name="usText">MI</string>
     <string name="youText">VI</string>
     <string name="newGame">Nova igra</string>
     <string name="newEntry">Novi unos</string>
     <string name="scoresToggleOption">BODOVI</string>
     <string name="callsToggleOption">ZVANJA</string>
-    <string name="numberSeven">7</string>
-    <string name="numberEight">8</string>
-    <string name="numberNine">9</string>
-    <string name="numberFour">4</string>
-    <string name="numberFive">5</string>
-    <string name="numberSix">6</string>
-    <string name="numberOne">1</string>
-    <string name="numberTwo">2</string>
-    <string name="numberThree">3</string>
     <string name="reset">RESET</string>
     <string name="numberZero">0</string>
     <string name="backspace"><![CDATA[<]]></string>
     <string name="back">NATRAG</string>
     <string name="confirm">POTVRDI</string>
+    <string name="no_data_entered_warning">Niste unesli sve bodove</string>
+
 
 </resources>

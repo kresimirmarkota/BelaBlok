@@ -15,12 +15,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginEnd="@dimen/marginEndScore"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/redoslijedIgreId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="@string/noScoreText"
                 android:textSize="@dimen/scoreDimen">
 
@@ -34,67 +37,92 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <LinearLayout
+
+            <TextView
+
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/score"
+                android:textSize="@dimen/scoreDimen">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/marginEndScore"
-                    android:text="@string/score"
-                    android:textSize="@dimen/scoreDimen">
+            </TextView>
 
-                </TextView>
-
-                <TextView
-                    android:id="@+id/ourScoreId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/noScoreText"
-                    android:textSize="@dimen/scoreDimen">
-
-                </TextView>
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/ourScoreId"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/noScoreText"
+                android:textSize="@dimen/scoreDimen">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/marginEndScore"
-                    android:text="@string/calls"
-                    android:textSize="@dimen/scoreDimen">
+            </TextView>
 
-                </TextView>
 
-                <TextView
-                    android:id="@+id/ourCallsId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/noScoreText"
-                    android:textSize="@dimen/scoreDimen">
+            <TextView
 
-                </TextView>
-            </LinearLayout>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
 
+                android:text="@string/calls"
+                android:textSize="@dimen/scoreDimen">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/ourCallsId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/noScoreText"
+                android:textSize="@dimen/scoreDimen">
+
+            </TextView>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
+
             android:gravity="center">
 
+
             <TextView
+                android:paddingBottom="@dimen/paddingBottomMiddleLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="@string/verticalLineBetweenScores"
                 android:textSize="@dimen/verticalLine">
 
             </TextView>
+            <TextView
+                android:paddingBottom="@dimen/paddingBottomMiddleLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/verticalLineBetweenScores"
+                android:textSize="@dimen/verticalLine">
+
+            </TextView>
+            <TextView
+                android:paddingBottom="@dimen/paddingBottomMiddleLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/verticalLineBetweenScores"
+                android:textSize="@dimen/verticalLine">
+
+            </TextView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -104,51 +132,51 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <LinearLayout
+
+            <TextView
+
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center"
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/marginEndScore"
-                    android:text="@string/score"
-                    android:textSize="@dimen/scoreDimen">
+                android:text="@string/score"
+                android:textSize="@dimen/scoreDimen">
 
-                </TextView>
+            </TextView>
 
-                <TextView
-                    android:id="@+id/yourScoreId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/noScoreText"
-                    android:textSize="@dimen/scoreDimen">
-
-                </TextView>
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/yourScoreId"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/noScoreText"
+                android:textSize="@dimen/scoreDimen">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/marginEndScore"
-                    android:text="@string/calls"
-                    android:textSize="@dimen/scoreDimen">
+            </TextView>
 
-                </TextView>
 
-                <TextView
-                    android:id="@+id/yourCallsId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/noScoreText"
-                    android:textSize="@dimen/scoreDimen">
+            <TextView
 
-                </TextView>
-            </LinearLayout>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:text="@string/calls"
+                android:textSize="@dimen/scoreDimen">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/yourCallsId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/noScoreText"
+                android:textSize="@dimen/scoreDimen">
+
+            </TextView>
 
 
         </LinearLayout>
