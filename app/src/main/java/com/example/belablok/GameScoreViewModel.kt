@@ -2,6 +2,7 @@ package com.example.belablok
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 
 class GameScoreViewModel : ViewModel() {
@@ -13,7 +14,7 @@ class GameScoreViewModel : ViewModel() {
         return _miViScoresList
     }
 
-    fun populateMiViScoreList() {
+   fun populateMiViScoreList() {
         scoreList.add(
             Scores(
                 getMiViScoreList().value!!.miScore,

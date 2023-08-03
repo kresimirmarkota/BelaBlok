@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -24,31 +25,30 @@ class GameScoreFragment : Fragment() {
     private lateinit var binding: FragmentGameScoreBinding
     private lateinit var calculatorFragmentTransaction: OnBtnClickListener
     private val gameScoreViewModel: GameScoreViewModel by activityViewModels()
-    var totalMiScore: Int = 0
-    var totalViScore: Int = 0
-    var totalMiCall: Int = 0
-    var totalViCall: Int = 0
+    var scoreMiArrayList : ArrayList<Int> = ArrayList()
+    var totalMeScoreTemp: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val scoreObserver = Observer<Scores> { score: Scores ->
-            var totalMeScoreTemp: Int = 0
-            totalMeScoreTemp + score.miScore.toInt();
-            //Log.d("ovo",totalMeScoreTemp.toString())
+
+             totalMeScoreTemp += score.miScore.toInt()
+            Log.d("ovo", score.miScore)
+            scoreMiArrayList.add(score.miScore.toInt())
+            Log.d("ovo", scoreMiArrayList.toString())
+            Log.d("ovo", scoreMiArrayList.size.toString())
+
         }
 
-        gameScoreViewModel.miViScoresList.observe(this, scoreObserver)
-
+        gameScoreViewModel._miViScoresList.observe(this, scoreObserver)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-
         binding = FragmentGameScoreBinding.inflate(layoutInflater)
         return binding.root
-
     }
 
     override fun onAttach(context: Context) {
@@ -58,9 +58,9 @@ class GameScoreFragment : Fragment() {
         }
 
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         binding.gameScoresRV.layoutManager = LinearLayoutManager(context)
 
@@ -72,3 +72,5 @@ class GameScoreFragment : Fragment() {
         }
     }
 }
+
+

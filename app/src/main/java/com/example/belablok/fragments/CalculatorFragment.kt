@@ -12,38 +12,27 @@ import com.example.belablok.GameScoreViewModel
 import com.example.belablok.OnBtnClickListener
 import com.example.belablok.R
 import com.example.belablok.Scores
+import com.example.belablok.databinding.FragmentCalculatorBinding
+import com.example.belablok.databinding.FragmentGameScoreBinding
 
 class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
+    private lateinit var binding: FragmentCalculatorBinding
     private val gameScoreViewModel: GameScoreViewModel by activityViewModels()
-    private lateinit var ourScoreEditText: EditText
-    private lateinit var yourScoreEditText: EditText
-    private lateinit var ourCallsEditText: EditText
-    private lateinit var yourCallsEditText: EditText
-    private lateinit var potvrdiButton: Button
-    private lateinit var resetButton: Button
     private lateinit var onAcceptButton: OnBtnClickListener
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is OnBtnClickListener) {
             onAcceptButton = context
         }
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ourScoreEditText = view.findViewById(R.id.ourScore)
-        yourScoreEditText = view.findViewById(R.id.yourScore)
-        ourCallsEditText = view.findViewById(R.id.ourCalls)
-        yourCallsEditText = view.findViewById(R.id.yourCalls)
-        potvrdiButton = view.findViewById(R.id.confirmButton)
-        resetButton = view.findViewById(R.id.reset_button)
 
-        potvrdiButton.setOnClickListener {
-            if (ourScoreEditText.text.isEmpty() or ourCallsEditText.text.isEmpty() or
-                yourScoreEditText.text.isEmpty() or yourCallsEditText.text.isEmpty()
+        binding.confirmButton.setOnClickListener {
+            if (binding.ourScore.text.isEmpty() or binding.ourCalls.text.isEmpty() or
+                binding.yourScore.text.isEmpty() or binding.yourCalls.text.isEmpty()
             ) {
                 Toast.makeText(
                     context,
@@ -54,23 +43,21 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
             } else {
                 gameScoreViewModel._miViScoresList.value =
                     Scores(
-                        ourScoreEditText.text.toString(),
-                        yourScoreEditText.text.toString(),
-                        ourCallsEditText.text.toString(),
-                        yourCallsEditText.text.toString()
+                        binding.ourScore.text.toString(),
+                        binding.yourScore.text.toString(),
+                        binding.ourCalls.text.toString(),
+                        binding.yourCalls.text.toString()
                     )
                 gameScoreViewModel.populateMiViScoreList()
                 onAcceptButton.onAcceptBtnClick()
             }
         }
-        resetButton.setOnClickListener {
-            ourScoreEditText.setText("")
-            ourCallsEditText.setText("")
-            yourScoreEditText.setText("")
-            yourCallsEditText.setText("")
+        binding.resetButton.setOnClickListener {
+            binding.ourScore.setText("")
+            binding.ourCalls.setText("")
+            binding.yourScore.setText("")
+            binding.yourCalls.setText("")
 
         }
     }
-
-
 }
