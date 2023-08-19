@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -15,7 +13,6 @@ import com.example.belablok.OnBtnClickListener
 import com.example.belablok.R
 import com.example.belablok.Scores
 import com.example.belablok.databinding.FragmentCalculatorBinding
-import com.example.belablok.databinding.FragmentGameScoreBinding
 
 class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
     private lateinit var binding: FragmentCalculatorBinding
@@ -28,12 +25,14 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
             onAcceptButton = context
         }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentCalculatorBinding.inflate(layoutInflater)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

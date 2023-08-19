@@ -4,23 +4,37 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class GameScoreViewModel : ViewModel() {
-    var _miViScoresList: MutableLiveData<Scores> = MutableLiveData<Scores>()
-    var miViScoresList: LiveData<Scores> = _miViScoresList
-    private var scoreList: ArrayList<Scores> = ArrayList()
+    var _miViScoresList: MutableStateFlow<Scores> =
+        MutableStateFlow<Scores>(Scores("0", "0", "0", "0"))
+    var miViScoresList: StateFlow<Scores> = _miViScoresList
+    var scoreList: ArrayList<Scores> = ArrayList()
+    var scoreMeList: ArrayList<Int> = ArrayList()
+    var scoreYouList: ArrayList<Int> = ArrayList()
+    var callMeList: ArrayList<Int> = ArrayList()
+    var callYouList: ArrayList<Int> = ArrayList()
 
-    fun getMiViScoreList(): MutableLiveData<Scores> {
+    fun getMiViScoreList(): MutableStateFlow<Scores> {
         return _miViScoresList
     }
 
-   fun populateMiViScoreList() {
+    init {
+
+        viewModelScope.launch { }
+    }
+
+    fun populateMiViScoreList() {
         scoreList.add(
             Scores(
-                getMiViScoreList().value!!.miScore,
-                getMiViScoreList().value!!.viScore,
-                getMiViScoreList().value!!.miCall,
-                getMiViScoreList().value!!.viCall,
+                getMiViScoreList().value.miScore,
+                getMiViScoreList().value.viScore,
+                getMiViScoreList().value.miCall,
+                getMiViScoreList().value.viCall,
             )
         )
 

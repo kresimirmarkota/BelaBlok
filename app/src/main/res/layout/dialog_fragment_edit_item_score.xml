@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/scoreDimen"
+    android:paddingBottom="@dimen/scoreDimen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/usText"
+            android:textSize="@dimen/calculatorToggleTextSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/calculatorToggleTextSize"
+            android:paddingStart="@dimen/calculatorToggleTextSize"
+            >
+        </TextView>
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="@dimen/calculatorToggleTextSize"
+            android:text="@string/youText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/calculatorToggleTextSize"
+            android:paddingStart="@dimen/calculatorToggleTextSize"
+            >
+
+        </TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:paddingEnd="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            >
+            <TextView
+                android:textSize="@dimen/scoreDimen"
+                android:layout_weight="1"
+                android:text="@string/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <EditText
+
+                android:inputType="number"
+                android:id="@+id/ourScore"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <TextView
+                android:textSize="@dimen/scoreDimen"
+                android:layout_weight="1"
+                android:text="@string/calls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <EditText
+
+                android:inputType="number"
+                android:id="@+id/ourCalls"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:paddingStart="40dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="@dimen/scoreDimen"
+                android:layout_weight="1"
+                android:text="@string/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <EditText
+
+                android:inputType="number"
+                android:id="@+id/yourScore"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <TextView
+                android:textSize="@dimen/scoreDimen"
+                android:layout_weight="1"
+                android:text="@string/calls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <EditText
+                android:inputType="number"
+                android:id="@+id/yourCalls"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_marginEnd="@dimen/marginEndScore"
+            android:id="@+id/reset_button"
+            android:layout_weight="1"
+            android:text="@string/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+        <Button
+            android:layout_marginStart="@dimen/marginEndScore"
+            android:id="@+id/confirmButton"
+            android:layout_weight="1"
+            android:text="@string/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
