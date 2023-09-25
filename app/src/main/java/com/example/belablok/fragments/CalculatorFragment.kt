@@ -47,14 +47,19 @@ class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
                 ).show()
 
             } else {
-                gameScoreViewModel._miViScoresList.value =
-                    Scores(
-                        binding.ourScore.text.toString(),
-                        binding.yourScore.text.toString(),
-                        binding.ourCalls.text.toString(),
-                        binding.yourCalls.text.toString()
-                    )
-                gameScoreViewModel.populateMiViScoreList()
+//                gameScoreViewModel._miViScoresList.value =
+//                    Scores(
+//                        binding.ourScore.text.toString(),
+//                        binding.yourScore.text.toString(),
+//                        binding.ourCalls.text.toString(),
+//                        binding.yourCalls.text.toString()
+//                    )
+                gameScoreViewModel.populateMiViScoreList(Scores(
+                    binding.ourScore.text.toString(),
+                    binding.yourScore.text.toString(),
+                    binding.ourCalls.text.toString(),
+                    binding.yourCalls.text.toString()
+                ))
                 onAcceptButton.onAcceptBtnClick()
             }
         }

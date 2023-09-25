@@ -21,6 +21,7 @@
     <string name="back">NATRAG</string>
     <string name="confirm">POTVRDI</string>
     <string name="no_data_entered_warning">Niste unesli sve bodove</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>

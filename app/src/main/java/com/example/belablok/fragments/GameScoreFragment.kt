@@ -2,6 +2,7 @@ package com.example.belablok.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,17 +10,20 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.belablok.GameScoreViewModel
 import com.example.belablok.OnBtnClickListener
+import com.example.belablok.RVAdapterListener
 import com.example.belablok.adapters.MiViScoreAdapter
 import com.example.belablok.databinding.FragmentGameScoreBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-class GameScoreFragment : Fragment() {
+class GameScoreFragment() : Fragment(),RVAdapterListener  {
     private lateinit var binding: FragmentGameScoreBinding
     private lateinit var calculatorFragmentTransaction: OnBtnClickListener
     private val gameScoreViewModel: GameScoreViewModel by activityViewModels()
+    private lateinit var rvAdapter: MiViScoreAdapter
 
 
     override fun onCreateView(
@@ -34,29 +38,17 @@ class GameScoreFragment : Fragment() {
         if (context is OnBtnClickListener) {
             calculatorFragmentTransaction = context
         }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            gameScoreViewModel.miViScoresList.collectLatest {
-                gameScoreViewModel.scoreMeList.add(it.miScore.toInt())
-                gameScoreViewModel.scoreYouList.add(it.viScore.toInt())
-                gameScoreViewModel.callMeList.add(it.miCall.toInt())
-                gameScoreViewModel.callYouList.add(it.viCall.toInt())
-                binding.totalMiScore.text = gameScoreViewModel.scoreMeList.sum().toString()
-                binding.totalViScore.text = gameScoreViewModel.scoreYouList.sum().toString()
-                binding.totalMiCall.text = gameScoreViewModel.callMeList.sum().toString()
-                binding.totalViCall.text = gameScoreViewModel.callYouList.sum().toString()
-            }
-
-        }
-
         binding.gameScoresRV.layoutManager = LinearLayoutManager(context)
-        val rvAdapter = MiViScoreAdapter(childFragmentManager)
+         rvAdapter = MiViScoreAdapter(childFragmentManager)
 
-        rvAdapter.updateScoreList(gameScoreViewModel.getPopulatedMiViScoreList())
+        rvAdapter.updateScoreListItems(gameScoreViewModel.scoreList)
+
         binding.gameScoresRV.adapter = rvAdapter
 
         binding.newEntryButton.setOnClickListener {
@@ -64,6 +56,9 @@ class GameScoreFragment : Fragment() {
         }
     }
 
+    override fun provideMiViScoreAdapter(): MiViScoreAdapter {
+        return rvAdapter
+    }
 
 }
 
